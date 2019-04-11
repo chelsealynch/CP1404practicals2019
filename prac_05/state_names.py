@@ -15,3 +15,7 @@ while state != "":
     else:
         print("Invalid short state")
     state = input("Enter short state: ").upper()
+
+max_length = max(len(state) for state in STATE_NAMES)
+for state in STATE_NAMES:
+    print("{:{}} is {}".format(state, max_length, STATE_NAMES[state]))
