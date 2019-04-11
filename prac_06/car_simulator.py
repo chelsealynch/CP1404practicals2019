@@ -1,5 +1,6 @@
 from prac_06.car import Car
 
+
 def main():
     print("Let's drive!")
     car_name = input("Enter your car name: ")
