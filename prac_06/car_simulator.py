@@ -26,7 +26,7 @@ def main():
             fuel_to_add = int(input("How many units of fuel do you want to add? "))
             while fuel_to_add < 0:
                 print("Fuel amount must be >= 0")
-                fuel_to_add = int(input("How many units of fuel do you want to add?"))
+                fuel_to_add = int(input("How many units of fuel do you want to add? "))
             car.add_fuel(fuel_to_add)
             print("Added {} units of fuel.".format(fuel_to_add))
         else:
