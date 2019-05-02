@@ -9,9 +9,10 @@ class ScoreCalculator(App):
         return self.root
 
     def calculate_score(self):
-        if self.root.ids.input_score.text < 50:
+        value = self.root.ids.input_score.text
+        if value < 50:
             self.root.ids.score_label.text = "Fail"
-        elif self.root.ids.input_score.text >= 50:
+        elif value >= 50:
             self.root.ids.score_label.text = "Pass"
 
     def clear_text(self):
