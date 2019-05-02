@@ -17,10 +17,16 @@ class ScoreCalculator(App):
 
     def calculate_score(self):
         value = self.convert_score()
-        if value < 50:
-            self.root.ids.result_label.text = "Fail"
+        if value >= 85:
+            self.root.ids.result_label.text = "High distinction"
+        elif value >= 75:
+            self.root.ids.result_label.text = "Distinction"
+        elif value >= 65:
+            self.root.ids.result_label.text = "Credit"
         elif value >= 50:
             self.root.ids.result_label.text = "Pass"
+        elif value < 50:
+            self.root.ids.result_label.text = "Fail"
 
     def clear_text(self):
         self.root.ids.result_label.text = "Enter your score"
