@@ -8,15 +8,22 @@ class ScoreCalculator(App):
         self.root = Builder.load_file('score_calculator.kv')
         return self.root
 
+    def convert_score(self):
+        try:
+            value = int(self.root.ids.input_score.text)
+            return value
+        except ValueError:
+            return 0
+
     def calculate_score(self):
-        value = self.root.ids.input_score.text
+        value = self.convert_score()
         if value < 50:
-            self.root.ids.score_label.text = "Fail"
+            self.root.ids.result_label.text = "Fail"
         elif value >= 50:
-            self.root.ids.score_label.text = "Pass"
+            self.root.ids.result_label.text = "Pass"
 
     def clear_text(self):
-        self.root.ids.score_label.text = "Enter your score"
+        self.root.ids.result_label.text = "Enter your score"
         self.root.ids.input_score.text = ""
 
 
