@@ -1,0 +1,47 @@
+BoxLayout:
+    # overall layout
+    orientation: 'vertical'
+    BoxLayout:
+        # celsius converting area
+        orientation: 'horizontal'
+        BoxLayout:
+            # c to f label and text input
+            orientation: 'vertical'
+            Label:
+                id: c_to_f_label
+                font_size: 48
+                text: 'Celsius to Fahrenheit'
+                color: (1, 1, 0, 1)
+            TextInput:
+                id: celsius_input
+        BoxLayout:
+            # celsius buttons
+            orientation: 'vertical'
+            BoxLayout:
+
+            Button:
+                text: 'convert'
+                on_press: app.convert_to_fahrenheit()
+            Button:
+                text: 'clear'
+    BoxLayout:
+        # fahrenheit converting area
+        orientation: 'horizontal'
+        BoxLayout:
+            # c to f label and text input
+            orientation: 'vertical'
+            Label:
+                id: c_to_f_label
+                font_size: 48
+                text: 'Fahrenheit to Celsius'
+                color: (1, 1, 0, 1)
+            TextInput:
+                id: fahrenheit_input
+        BoxLayout:
+            # celsius buttons
+            orientation: 'horizontal'
+            Button:
+                text: 'convert'
+                on_press: app.convert_to_celsius()
+            Button:
+                text: 'clear'
