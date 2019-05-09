@@ -15,22 +15,26 @@ class MilesConverterApp(App):
         self.root = Builder.load_file('convert_m_km.kv')
         return self.root
 
-    def handle_calculate(self, text):
+    def handle_calculate(self):
         """Handle calculation (could be button press or other call)."""
         print("handle calc")
+        text = self.root.ids.input_miles.text
         miles = self.convert_to_number(text)
         self.update_result(miles)
 
-    def handle_increment(self, text, change):
+    def handle_increment(self, change):
         """Handle up/down button press, update the text input with new value, call calculation function."""
         print("handle inc")
+        text = self.root.ids.input_miles.text
         miles = self.convert_to_number(text) + change
         self.root.ids.input_miles.text = str(miles)
+        self.handle_calculate()
         # Since the InputText.text has changed, its on_text event will fire and handle_calculate will be called
 
     def update_result(self, miles):
         print("update")
         self.output_km = str(miles * MILES_TO_KM)
+        print(self.output_km)
 
     @staticmethod
     def convert_to_number(text):
