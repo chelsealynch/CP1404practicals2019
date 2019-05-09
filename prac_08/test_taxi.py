@@ -1,6 +1,6 @@
 from prac_08.taxi import Taxi
 
-taxi = Taxi("Prius 1", 100, 1.23)
+taxi = Taxi("Prius 1", 100, Taxi.price_per_km)
 taxi.drive(40)
 print(taxi)
 taxi.start_fare()
