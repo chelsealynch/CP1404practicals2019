@@ -3,8 +3,7 @@ import random
 
 
 class UnreliableCar(Car):
-    reliability = random.random(0, 100)
-    distance = random.random
+    reliability = random.uniform(0, 100)
 
     def __init__(self, name, fuel, reliability):
         super().__init__(name, fuel)
@@ -13,5 +12,5 @@ class UnreliableCar(Car):
         self.reliability = reliability
 
     def drive(self, distance):
-        self.distance = distance
-        if distance
+        distance_driven = super().drive(distance)
+        self.distance = distance_driven
