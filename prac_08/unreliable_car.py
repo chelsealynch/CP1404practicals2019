@@ -10,7 +10,7 @@ class UnreliableCar(Car):
         self.reliability = reliability
 
     def drive(self, distance):
-        car_reliability = randint(1, 100)
+        car_reliability = randint(0, 100)
         if car_reliability >= self.reliability:
             distance = 0
         distance_driven = self.drive(distance)
