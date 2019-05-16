@@ -4,6 +4,7 @@ from prac_08.taxi import Taxi
 class SilverServiceTaxi(Taxi):
 
     def __init__(self, name, fuel, fanciness):
-        self.name = name
-        self.fuel = fuel
+        super().__init__(name, fuel)
         self.fanciness = fanciness
+
+    def
